@@ -26,6 +26,15 @@ cd kaldi
 git checkout private
 cd tools; make -j 8
 cd ../src; ./configure; make -j 8
+cd ../../
 
 # Get personal speech dataset (note: this is a private repo!)
 git clone cloud_git:/var/git/speech-dataset
+cd speech-dataset
+./prepare_data.py
+cd ..
+
+cd kaldi/egs/rm/s5
+ln -s ../../../../speech-dataset dataset
+wget https://github.com/daanzu/kaldi-active-grammar/releases/download/v1.8.0/kaldi_model_daanzu_20200905_1ep-smalllm.zip
+unzip kaldi_model_daanzu_20200905_1ep-smalllm.zip
