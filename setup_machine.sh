@@ -27,6 +27,7 @@ if [ $stage -le 1 ]; then
 	# Fetch kaldi and install MKL
 	git clone git@github.com:JohnDoe02/kaldi.git
 	sudo kaldi/tools/extras/install_mkl.sh
+	kaldi/tools/install_srilm.sh
 
 	# Build kaldi
 	cd kaldi
