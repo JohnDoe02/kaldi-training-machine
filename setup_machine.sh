@@ -3,9 +3,9 @@
 # Script for setting up a cloud instance, for performing model training
 # using kaldi together with CUDA
 
-# Install kaldi deps for debian 10
+# Install kaldi/training deps for debian 10
 sudo apt-get --yes install git vim g++ automake autoconf unzip wget sox \
-	gfortran libtool subversion python2.7 python3 zlib1g-dev make
+	gfortran libtool subversion python2.7 python3 zlib1g-dev make python-pandas
 
 # Install CUDA
 sudo apt-get install software-properties-common
