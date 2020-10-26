@@ -10,7 +10,11 @@ stage=2
 if [ $stage -le 0 ]; then
 		# Install kaldi/training deps for debian 10
 	sudo apt-get --yes install git vim g++ automake autoconf unzip wget sox \
-		gfortran libtool subversion python2.7 python3 zlib1g-dev make python3-pandas
+		gfortran libtool subversion python2.7 python3 zlib1g-dev make python3-pandas \
+		icu-devtools python3-pip
+
+	# Needed for automatic generation of OOV's pronunciation
+	pip3 install g2p_en requests
 
 	# Install CUDA
 	sudo apt-get install software-properties-common
